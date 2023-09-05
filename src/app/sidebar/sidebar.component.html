@@ -1,0 +1,112 @@
+<div class="h-25 p-3 text-bg-tertiary sidebar" style="background-color: #dfe6dd">
+  <div>
+    <a href="/start">
+      <img src="assets/logo.png" alt="Logo" width="300" height="300">
+    </a>
+  </div>
+  <hr>
+  <div>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li>
+        <a
+          (click)="changeFilter('')"
+          [routerLink]="['/dashboard']" class="nav-link text-dark"
+          [ngClass]="{'hover': isHovered===1}"
+          (mouseenter)="activateHover(1)"
+          (mouseleave)="deactivateHover()">
+          Dashboard
+        </a>
+      </li>
+      <li>
+        <a
+          (click)="changeFilter('Sc3')"
+          [routerLink]="['/dashboard']" class="nav-link text-dark"
+          [ngClass]="{'hover': isHovered===2}"
+          (mouseenter)="activateHover(2)"
+          (mouseleave)="deactivateHover()">
+          Scope-3-Daten
+        </a>
+      </li>
+      <li>
+        <a
+          (click)="changeFilter('Konsum')"
+          [routerLink]="['/dashboard']" class="nav-link text-dark"
+          [ngClass]="{'hover': isHovered===3}"
+          (mouseenter)="activateHover(3)"
+          (mouseleave)="deactivateHover()">
+          Konsum- und Haushaltsgüter
+        </a>
+      </li>
+      <li>
+        <a
+          (click)="changeFilter('Versicherungen')"
+          [routerLink]="['/dashboard']" class="nav-link text-dark"
+          [ngClass]="{'hover': isHovered===4}"
+          (mouseenter)="activateHover(4)"
+          (mouseleave)="deactivateHover()">
+          Versicherungen
+        </a>
+      </li>
+      <li>
+        <a
+          (click)="changeFilter('Technologie')"
+          [routerLink]="['/dashboard']" class="nav-link text-dark"
+          [ngClass]="{'hover': isHovered===5}"
+          (mouseenter)="activateHover(5)"
+          (mouseleave)="deactivateHover()">
+          Technologie
+        </a>
+      </li>
+      <li>
+        <a
+          (click)="changeFilter('Lebensmittel')"
+          [routerLink]="['/dashboard']" class="nav-link text-dark"
+          [ngClass]="{'hover': isHovered===6}"
+          (mouseenter)="activateHover(6)"
+          (mouseleave)="deactivateHover()">
+          Lebensmittel
+        </a>
+      </li>
+      <li>
+        <a
+          (click)="changeFilter('Maschinenbau')"
+          [routerLink]="['/dashboard']" class="nav-link text-dark"
+          [ngClass]="{'hover': isHovered===7}"
+          (mouseenter)="activateHover(7)"
+          (mouseleave)="deactivateHover()">
+          Maschinenbau und Industrietechnik
+        </a>
+      </li>
+      <li>
+        <a
+          (click)="changeFilter('Handel')"
+          [routerLink]="['/dashboard']" class="nav-link text-dark"
+          [ngClass]="{'hover': isHovered===8}"
+          (mouseenter)="activateHover(8)"
+          (mouseleave)="deactivateHover()">
+          Handel
+        </a>
+      </li>
+      <li>
+        <a
+          (click)="changeFilter('Mode')"
+          [routerLink]="['/dashboard']" class="nav-link text-dark"
+          [ngClass]="{'hover': isHovered===9}"
+          (mouseenter)="activateHover(9)"
+          (mouseleave)="deactivateHover()">
+          Mode
+        </a>
+      </li>
+      <li>
+        <a
+          (click)="changeFilter('Chemie')"
+          [routerLink]="['/dashboard']" class="nav-link text-dark"
+          [ngClass]="{'hover': isHovered===10}"
+          (mouseenter)="activateHover(10)"
+          (mouseleave)="deactivateHover()">
+          Chemie und Pharmazie
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

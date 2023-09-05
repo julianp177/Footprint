@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg nav-pills" style="background-color: #dfe6dd">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarToggler">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item mx-3">
+          <a class="nav-link text-dark p-2" href="/start" [ngClass]="{'hover': isHovered===1}" (mouseenter)="activateHover(1)" (mouseleave)="deactivateHover()">Start</a>
+        </li>
+        <li class="nav-item mx-3">
+          <a class="nav-link text-dark p-2" href="/aboutus" [ngClass]="{'hover': isHovered===2}" (mouseenter)="activateHover(2)" (mouseleave)="deactivateHover()">Über Uns</a>
+        </li>
+        <li class="nav-item mx-3">
+          <a class="nav-link text-dark p-2"  href="/faq" [ngClass]="{'hover': isHovered===3}" (mouseenter)="activateHover(3)" (mouseleave)="deactivateHover()">FAQ</a>
+        </li>
+        <li class="nav-item mx-3">
+          <a class="nav-link text-dark p-2" href="/kontakt" [ngClass]="{'hover': isHovered===4}" (mouseenter)="activateHover(4)" (mouseleave)="deactivateHover()">Kontakt</a>
+        </li>
+      </ul>
+      <form role="search">
+        <input class="form-control me-2" type="search" placeholder="Suche" aria-label="Suche">
+      </form>
+      <img style="cursor:pointer" id="header-flag" class="mx-3" [src]="imagePath" data-bs-toggle="modal" data-bs-target="#exampleModal" width="30" height="20" alt="Flagge">
+    </div>
+  </div>
+</nav>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Land auswählen</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body justify-content-center">
+        <img style="cursor:pointer" (click)="toggleSidebar(true,'assets/flag_en.png')" class="m-3" src="assets/flag_en.png" width="30" height="20">
+        <img style="cursor:pointer" (click)="toggleSidebar(true,'assets/flag_usa.jpg')" class="m-3" src="assets/flag_usa.jpg" width="30" height="20">
+        <img style="cursor:pointer" (click)="toggleSidebar(false,'assets/flag_sau.jpg')" class="m-3" src="assets/flag_sau.jpg" width="30" height="20">
+        <img style="cursor:pointer" (click)="toggleSidebar(false,'assets/flag_emi.jpg')" class="m-3" src="assets/flag_emi.jpg" width="30" height="20">
+        <img style="cursor:pointer" (click)="toggleSidebar(true,'assets/flag.png')" class="m-3" src="assets/flag.png" width="30" height="20">
+        <img style="cursor:pointer" (click)="toggleSidebar(false,'assets/flag_ind.jpg')" class="m-3" src="assets/flag_ind.jpg" width="30" height="20">
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,28 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #3f902a;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  cursor: pointer;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+}
+
+input:focus {
+  outline: none;
+}
+.hover{
+  background-color: #3f902a;
+}
+

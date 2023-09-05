@@ -1,0 +1,21 @@
+<body>
+  <div class="row p-5 col-10 d-flex">
+    <h1 class="text-white" style="font-size:4rem">Green Frog Footprints</h1>
+    <p style="font-size: 0.2rem" class="text-dark bg-dark">Gemoje</p>
+  </div>
+  <div class="d-flex align-items-stretch h-100 w-100">
+    <div *ngIf="onTheLeft" class="justify-content-end">
+      <app-sidebar style="background-color: #dfe6dd; height:100%" class="d-lg-flex d-none"></app-sidebar>
+    </div>
+    <main class="w-100 d-flex flex-column ">
+      <app-header ></app-header>
+      <router-outlet style="background-color: #dfe6dd"></router-outlet>
+    </main>
+    <div *ngIf="!onTheLeft" class="justify-content-end">
+      <app-sidebar style="background-color: #dfe6dd; height:100%" class="d-lg-flex d-none"></app-sidebar>
+    </div>
+  </div>
+</body>
+<footer>
+  <app-footer></app-footer>
+</footer>

@@ -1,0 +1,151 @@
+<div class="p-5" style="height:100%;background-color: rgba(223, 230, 221, 0.7);">
+
+  <div class="row align-items-baseline">
+    <div class="col-6">
+      <input type="text" [(ngModel)]="searchTerm" (keyup)="applyFilter()" placeholder="Suchbegriff eingeben">
+    </div>
+    <div class="dropdown d-lg-none d-xl-none col">
+      <button class="btn btn-secondary dropdown-toggle" style="background-color: #3f902a;opacity: 100% !important;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Dropdown button
+      </button>
+      <ul class="dropdown-menu">
+        <li>
+          <a
+            (click)="changeFilter('')"
+            [routerLink]="['/dashboard']" class="nav-link text-dark"
+            [ngClass]="{'hover': isHovered===1}"
+            (mouseenter)="activateHover(1)"
+            (mouseleave)="deactivateHover()">
+            Dashboard
+          </a>
+        </li>
+        <li>
+          <a
+            (click)="changeFilter('Sc3')"
+            [routerLink]="['/dashboard']" class="nav-link text-dark"
+            [ngClass]="{'hover': isHovered===2}"
+            (mouseenter)="activateHover(2)"
+            (mouseleave)="deactivateHover()">
+            Scope-3-Daten
+          </a>
+        </li>
+        <li>
+          <a
+            (click)="changeFilter('Konsum')"
+            [routerLink]="['/dashboard']" class="nav-link text-dark"
+            [ngClass]="{'hover': isHovered===3}"
+            (mouseenter)="activateHover(3)"
+            (mouseleave)="deactivateHover()">
+            Konsum- und Haushaltsgüter
+          </a>
+        </li>
+        <li>
+          <a
+            (click)="changeFilter('Versicherungen')"
+            [routerLink]="['/dashboard']" class="nav-link text-dark"
+            [ngClass]="{'hover': isHovered===4}"
+            (mouseenter)="activateHover(4)"
+            (mouseleave)="deactivateHover()">
+            Versicherungen
+          </a>
+        </li>
+        <li>
+          <a
+            (click)="changeFilter('Technologie')"
+            [routerLink]="['/dashboard']" class="nav-link text-dark"
+            [ngClass]="{'hover': isHovered===5}"
+            (mouseenter)="activateHover(5)"
+            (mouseleave)="deactivateHover()">
+            Technologie
+          </a>
+        </li>
+        <li>
+          <a
+            (click)="changeFilter('Lebensmittel')"
+            [routerLink]="['/dashboard']" class="nav-link text-dark"
+            [ngClass]="{'hover': isHovered===6}"
+            (mouseenter)="activateHover(6)"
+            (mouseleave)="deactivateHover()">
+            Lebensmittel
+          </a>
+        </li>
+        <li>
+          <a
+            (click)="changeFilter('Maschinenbau')"
+            [routerLink]="['/dashboard']" class="nav-link text-dark"
+            [ngClass]="{'hover': isHovered===7}"
+            (mouseenter)="activateHover(7)"
+            (mouseleave)="deactivateHover()">
+            Maschinenbau und Industrietechnik
+          </a>
+        </li>
+        <li>
+          <a
+            (click)="changeFilter('Handel')"
+            [routerLink]="['/dashboard']" class="nav-link text-dark"
+            [ngClass]="{'hover': isHovered===8}"
+            (mouseenter)="activateHover(8)"
+            (mouseleave)="deactivateHover()">
+            Handel
+          </a>
+        </li>
+        <li>
+          <a
+            (click)="changeFilter('Mode')"
+            [routerLink]="['/dashboard']" class="nav-link text-dark"
+            [ngClass]="{'hover': isHovered===9}"
+            (mouseenter)="activateHover(9)"
+            (mouseleave)="deactivateHover()">
+            Mode
+          </a>
+        </li>
+        <li>
+          <a
+            (click)="changeFilter('Chemie')"
+            [routerLink]="['/dashboard']" class="nav-link text-dark"
+            [ngClass]="{'hover': isHovered===10}"
+            (mouseenter)="activateHover(10)"
+            (mouseleave)="deactivateHover()">
+            Chemie und Pharmazie
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+    <tr>
+      <th *ngIf="key==='Company'" (click)="sortData('Company')">Unternehmen <i class="bi bi-arrow-down-square"></i> </th>
+      <th *ngIf="key!='Company'" (click)="sortData('Company')">Unternehmen</th>
+      <th *ngIf="key==='Industry'" (click)="sortData('Industry')">Branche <i class="bi bi-arrow-down-square"></i></th>
+      <th *ngIf="key!='Industry'" (click)="sortData('Industry')">Branche</th>
+      <th *ngIf="key==='Country'" (click)="sortData('Country')">Land <i class="bi bi-arrow-down-square"></i></th>
+      <th *ngIf="key!='Country'" (click)="sortData('Country')">Land</th>
+      <th *ngIf="key==='CARR'" (click)="sortData('CARR')">Compount Annual Reduction Rate in % <i class="bi bi-arrow-down-square"></i></th>
+      <th *ngIf="key!='CARR'" (click)="sortData('CARR')">Compount Annual Reduction Rate in %</th>
+      <th *ngIf="key==='Year'" (click)="sortData('Year')">Zeitraum<i class="bi bi-arrow-down-square"></i></th>
+      <th *ngIf="key!='Year'" (click)="sortData('Year')">Zeitraum</th>
+      <th *ngIf="key==='CO2'" (click)="sortData('CO2')">Aktuelle CO2 Intensität in Tonnen <i class="bi bi-arrow-down-square"></i></th>
+      <th *ngIf="key!='CO2'" (click)="sortData('CO2')">Aktuelle CO2 Intensität in Tonnen</th>
+      <th *ngIf="key==='Emission'" (click)="sortData('Emission')">Aktuelle Emissionen in Tonnen <i class="bi bi-arrow-down-square"></i></th>
+      <th *ngIf="key!='Emission'" (click)="sortData('Emission')">Aktuelle Emissionen in Tonnen</th>
+      <th *ngIf="key==='Scope3'" (click)="sortData('Scope3')">Scope-3-Daten? <i class="bi bi-arrow-down-square"></i></th>
+      <th *ngIf="key!='Scope3'" (click)="sortData('Scope3')">Scope-3-Daten?</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let comp of displayedData">
+      <td>{{ comp.Company }}</td>
+      <td>{{ comp.Industry }}</td>
+      <td>{{ comp.Country }}</td>
+      <td>{{ comp.CARR }}</td>
+      <td>{{ comp.Year }}</td>
+      <td>{{ comp.CO2 }}</td>
+      <td>{{ comp.Emission }}</td>
+      <td>{{ comp.Scope3 }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
